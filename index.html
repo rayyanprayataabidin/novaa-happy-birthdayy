@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Birthday Novaa Genduutt❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Comic Sans MS", Arial;
+            background: #ffe6f2;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff4da6;
+            font-size: 40px;
+            margin-top: 40px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p, label {
+            color: #ff69b4;
+            font-size: 20px;
+            padding: 0 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 20px;
+            background: white;
+            color: #ff4da6;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 10px #ffb3d9;
+            transition: 0.3s;
+        }
+        .btn:hover { background:#ff4da6;color:white; }
+
+        /* Surat */
+        #surat {
+            display:none;margin-top:20px;padding:20px;width:80%;background:white;border-radius:15px;box-shadow:0 0 10px pink;color:#ff4da6;font-size:22px;animation:fadeIn 1.5s ease-in-out;margin-left:auto;margin-right:auto;
+        }
+
+        /* Input tanggal jadian */
+        .input-box {
+            margin-top: 30px;
+            background: white;
+            padding: 15px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 10px pink;
+        }
+
+        /* Game sederhana */
+        #game {
+            display:none;
+            margin-top: 30px;
+            padding: 20px;
+            background:white;
+            border-radius: 20px;
+            width: 80%;
+            margin-left:auto;
+            margin-right:auto;
+            box-shadow:0 0 10px pink;
+            color:#ff4da6;
+            font-size:22px;
+        }
+
+        .hadiah {
+            font-size: 40px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        .hadiah:hover { transform: scale(1.2); }
+
+        /* Love jatuh */
+        .love {
+            position: fixed;top:-10px;color:#ff4da6;font-size:20px;animation:fall 4s linear infinite;
+        }
+        @keyframes fall { 0%{transform:translateY(0) rotate(0);}100%{transform:translateY(100vh) rotate(360deg);} }
+
+        /* Balon */
+        .balon {position:fixed;bottom:-50px;font-size:30px;animation:naik 6s linear infinite;}
+        @keyframes naik {0%{transform:translateY(0);}100%{transform:translateY(-100vh);} }
+    </style>
+</head>
+<body>
+
+    <!-- Musik -->
+    <audio autoplay loop>
+        <source src="Nothing.mp3" type="audio/mpeg">
+    </audio>
+
+    <h1>🎀 Selamat Ulang Tahun Novaa! 🎀</h1>
+    <p>Kamu genap 19 tahun hari ini! Semoga hari spesialmu penuh senyum, cinta, dan kejutan manis. 💗</p>
+
+    <!-- Tanggal jadian -->
+    <div class="input-box">
+        <label>Tanggal kita jadian: <b>04 - 01 - 2024</b> 💞</label>
+        <p id="hariJadian"></p>
+    </div>
+
+    <button class="btn" onclick="tampilkanSurat()">Buka Surat Rahasia 💌</button>
+    <div id="surat">Hai Novaa… 💖<br><br>
+        Kamu itu lucu, manis, dan spesial banget buat aku. Dari awal kita ketemu sampai hari ini, kamu tetap jadi alasan aku bahagia. terima kasih banyak sudah hadir dalam hidup aku yang membosankan ini, ga kerasa kamu udah 19 tahun ajaa yaa, semoga dengan bertambahnya usia kamu kamu bisa menjadi lebih dewasa yaa, aku selalu berdoa yang terbaik buat kamu. sekali lagi selamat ulang tahunnnnn novaaa semoga panjang umurr sehatt selalu makinn banyak rezekinyaa suksess selalu yaa akuu selalua ada di samping kamu dan selalu support kamuu, dan juga semoga segala yang kamu inginkan segera terwujuudd yaa di umurr kamuu yang ke 19 inii MAKEE AAA WISHHH loveee youuuu  💕✨<br><br>
+        Aku sayang banget sama kamu. Selamat ulang tahun yang ke-19 ya sayangku! AHAHAHAHAHAHA INI LUCUU BANGETT SAYANG 🎂🎈💗
+    </div>
+
+    <button class="btn" onclick="mulaiGame()">Main Game Cute 🎮🎀</button>
+
+    <!-- Game -->
+    <div id="game">
+        <p>Pencet hadiahnya yaa genduuttt 🎁👇</p>
+        <div class="hadiah" onclick="munculUcapan()">🎁</div>
+        <p id="ucapanGame" style="display:none;">🎉 Selamat ulang tahun yang ke-19 SAYAANGGG! Kamu lucu banget AHAHAHAHAHAHAHAHA iniii hadiaah darii akuuuuuuuuu  💗✨</p>
+    </div>
+
+    <!-- Animasi -->
+    <script>
+        function tampilkanSurat(){ document.getElementById("surat").style.display="block"; efekKejutan(); }
+        function mulaiGame(){ document.getElementById("game").style.display="block"; }
+        function munculUcapan(){ document.getElementById("ucapanGame").style.display="block"; efekKejutan(); }
+
+        /* Hitung hari jadian */
+        const jadian = new Date("2024-01-04");
+        const today = new Date();
+        const beda = Math.floor((today - jadian) / (1000 * 60 * 60 * 24));
+        document.getElementById("hariJadian").innerHTML = "Kita sudah jadian selama " + beda + " hari 💞";
+
+        /* Love jatuh */
+        function loveJatuh(){ const love=document.createElement("div");love.classList.add("love");love.innerHTML="💖";love.style.left=Math.random()*window.innerWidth+"px";love.style.animationDuration=(Math.random()*3+2)+"s";document.body.appendChild(love); setTimeout(()=>love.remove(),4000);} setInterval(loveJatuh,300);
+
+        /* Balon naik */
+        function balonNaik(){ const b=document.createElement("div");b.classList.add("balon");b.innerHTML="🎈";b.style.left=Math.random()*window.innerWidth+"px";b.style.animationDuration=(Math.random()*5+3)+"s";document.body.appendChild(b); setTimeout(()=>b.remove(),6000);} setInterval(balonNaik,500);
+
+        function efekKejutan(){ for(let i=0;i<20;i++){ setTimeout(loveJatuh,i*100); } }
+    </script>
+
+</body>
+</html>
